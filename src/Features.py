@@ -8,3 +8,9 @@ def scale_amount(df):
 def drop_time(df):
     df = df.drop("time", axis=1)
     return df
+
+def engineer_features(df):
+    df = scale_amount(df)
+    df = drop_time(df)
+
+    return df

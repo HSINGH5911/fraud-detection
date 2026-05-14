@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea474720-5622-4b5f-bfd4-c78b2d07d6ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/FraudDetection.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/raw/creditcard.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Evaluate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Features.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Predict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Preprocess.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Train.py" afterDir="false" />
+    <list default="true" id="ea474720-5622-4b5f-bfd4-c78b2d07d6ff" name="Changes" comment="init commit">
+      <change beforePath="$PROJECT_DIR$/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Features.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Features.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +26,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "HSINGH5911"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/HSINGH5911/fraud-detection.git",
+    "accountId": "66919fd7-185a-4df5-8f10-c7b90492354b"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="3CQN4pZM8A9Fs0VPG1P1K3PHIEJ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -45,17 +49,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/bugad/PycharmProjects/FraudDetection/data/raw"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/bugad/PycharmProjects/FraudDetection/data/raw&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\bugad\PycharmProjects\FraudDetection\data\raw" />
@@ -76,6 +80,19 @@
       <option name="presentableId" value="Default" />
       <updated>1776313645430</updated>
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1778784046005</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1778784046005</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
   </component>
 </project>
