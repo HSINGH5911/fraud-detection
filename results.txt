@@ -1,0 +1,31 @@
+No Param on Train.py
+
+Accuracy 0.9991046662687406
+Precision 0.8615384615384616
+Recall 0.5714285714285714
+F1 0.6871165644171779
+Confusion Matrix
+[[56855     9]
+ [   42    56]]
+
+solver='lbgfs'
+
+Accuracy 0.9991046662687406
+Precision 0.8615384615384616
+Recall 0.5714285714285714
+F1 0.6871165644171779
+Confusion Matrix
+[[56855     9]
+ [   42    56]]
+
+solver='lbgfs', max_iter = 100
+
+Accuracy 0.9991046662687406
+Precision 0.8615384615384616
+Recall 0.5714285714285714
+F1 0.6871165644171779
+Confusion Matrix
+[[56855     9]
+ [   42    56]]
+
+ solver='lbgfs', max_iter = 100

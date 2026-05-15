@@ -3,7 +3,7 @@ import joblib
 from pathlib import Path
 
 def train_model(x_train, y_train):
-    model = LogisticRegression()
+    model = LogisticRegression(random_state=0, solver='lbfgs')
     model.fit(x_train, y_train)
 
     return model
