@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea474720-5622-4b5f-bfd4-c78b2d07d6ff" name="Changes" comment="made a way to automatically send the results from the curr model to results.txt">
+    <list default="true" id="ea474720-5622-4b5f-bfd4-c78b2d07d6ff" name="Changes" comment="changed the way the results are processed">
+      <change afterPath="$PROJECT_DIR$/cleaned_results.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProcessData.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProcessData.py" afterDir="false" />
     </list>
@@ -123,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778907398413</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="changed the way the results are processed">
+      <option name="closed" value="true" />
+      <created>1778959088766</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778959088766</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -132,6 +141,7 @@
     <MESSAGE value="basic version" />
     <MESSAGE value="made a way to view the different effiencies of the models" />
     <MESSAGE value="made a way to automatically send the results from the curr model to results.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="made a way to automatically send the results from the curr model to results.txt" />
+    <MESSAGE value="changed the way the results are processed" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the way the results are processed" />
   </component>
 </project>

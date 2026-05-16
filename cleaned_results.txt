@@ -1,0 +1,215 @@
+2026-05-16 00:05:38 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
+  Parameters:
+    bootstrap: True
+    ccp_alpha: 0.0
+    class_weight: 'balanced'
+    criterion: 'gini'
+    max_depth: 10
+    max_features: 'sqrt'
+    max_leaf_nodes: None
+    max_samples: None
+    min_impurity_decrease: 0.0
+    min_samples_leaf: 1
+    min_samples_split: 2
+    min_weight_fraction_leaf: 0.0
+    monotonic_cst: None
+    n_estimators: 50
+    n_jobs: 1
+    oob_score: False
+    random_state: 42
+    verbose: 0
+    warm_start: False
+  Accuracy : 0.9994733330992591
+  Precision: 0.8695652173913043
+  Recall   : 0.8163265306122449
+  F1       : 0.8421052631578947
+  Confusion Matrix: ['[[56852    12]', '[   18    80]]']
+
+2026-05-16 00:09:52 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
+  Parameters:
+    bootstrap: True
+    ccp_alpha: 0.0
+    class_weight: 'balanced'
+    criterion: 'gini'
+    max_depth: None
+    max_features: 'sqrt'
+    max_leaf_nodes: None
+    max_samples: None
+    min_impurity_decrease: 0.0
+    min_samples_leaf: 1
+    min_samples_split: 2
+    min_weight_fraction_leaf: 0.0
+    monotonic_cst: None
+    n_estimators: 100
+    n_jobs: 1
+    oob_score: False
+    random_state: 42
+    verbose: 0
+    warm_start: False
+  Accuracy : 0.9995084442259752
+  Precision: 0.972972972972973
+  Recall   : 0.7346938775510204
+  F1       : 0.8372093023255814
+  Confusion Matrix: ['[[56862     2]', '[   26    72]]']
+
+2026-05-16 00:11:27 | LogisticRegression | from sklearn.linear_model import LogisticRegression
+  Parameters:
+    C: 1.0
+    class_weight: None
+    dual: False
+    fit_intercept: True
+    intercept_scaling: 1
+    l1_ratio: 0.0
+    max_iter: 100
+    n_jobs: None
+    penalty: 'deprecated'
+    random_state: None
+    solver: 'lbfgs'
+    tol: 0.0001
+    verbose: 0
+    warm_start: False
+  Accuracy : 0.9991046662687406
+  Precision: 0.8615384615384616
+  Recall   : 0.5714285714285714
+  F1       : 0.6871165644171779
+  Confusion Matrix: ['[[56855     9]', '[   42    56]]']
+
+2026-05-16 00:13:32 | LogisticRegression | from sklearn.linear_model import LogisticRegression
+  Parameters:
+    C: 1.0
+    class_weight: None
+    dual: False
+    fit_intercept: True
+    intercept_scaling: 1
+    l1_ratio: 0.0
+    max_iter: 100
+    n_jobs: None
+    penalty: 'deprecated'
+    random_state: None
+    solver: 'lbfgs'
+    tol: 0.0001
+    verbose: 0
+    warm_start: False
+  Accuracy : 0.9991046662687406
+  Precision: 0.8615384615384616
+  Recall   : 0.5714285714285714
+  F1       : 0.6871165644171779
+  Confusion Matrix: ['[[56855     9]', '[   42    56]]']
+
+2026-05-16 00:14:19 | LogisticRegression | from sklearn.linear_model import LogisticRegression
+  Parameters:
+    C: 1.0
+    class_weight: None
+    dual: False
+    fit_intercept: True
+    intercept_scaling: 1
+    l1_ratio: 0.0
+    max_iter: 100
+    n_jobs: None
+    penalty: 'deprecated'
+    random_state: None
+    solver: 'lbfgs'
+    tol: 0.0001
+    verbose: 0
+    warm_start: False
+  Accuracy : 0.9991046662687406
+  Precision: 0.8615384615384616
+  Recall   : 0.5714285714285714
+  F1       : 0.6871165644171779
+  Confusion Matrix: ['[[56855     9]', '[   42    56]]']
+
+Highest accuracy:
+2026-05-16 00:09:52 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
+0.9995084442259752
+Parameters:
+  bootstrap: True
+  ccp_alpha: 0.0
+  class_weight: 'balanced'
+  criterion: 'gini'
+  max_depth: None
+  max_features: 'sqrt'
+  max_leaf_nodes: None
+  max_samples: None
+  min_impurity_decrease: 0.0
+  min_samples_leaf: 1
+  min_samples_split: 2
+  min_weight_fraction_leaf: 0.0
+  monotonic_cst: None
+  n_estimators: 100
+  n_jobs: 1
+  oob_score: False
+  random_state: 42
+  verbose: 0
+  warm_start: False
+
+Highest precision:
+2026-05-16 00:09:52 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
+0.972972972972973
+Parameters:
+  bootstrap: True
+  ccp_alpha: 0.0
+  class_weight: 'balanced'
+  criterion: 'gini'
+  max_depth: None
+  max_features: 'sqrt'
+  max_leaf_nodes: None
+  max_samples: None
+  min_impurity_decrease: 0.0
+  min_samples_leaf: 1
+  min_samples_split: 2
+  min_weight_fraction_leaf: 0.0
+  monotonic_cst: None
+  n_estimators: 100
+  n_jobs: 1
+  oob_score: False
+  random_state: 42
+  verbose: 0
+  warm_start: False
+
+Highest recall:
+2026-05-16 00:05:38 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
+0.8163265306122449
+Parameters:
+  bootstrap: True
+  ccp_alpha: 0.0
+  class_weight: 'balanced'
+  criterion: 'gini'
+  max_depth: 10
+  max_features: 'sqrt'
+  max_leaf_nodes: None
+  max_samples: None
+  min_impurity_decrease: 0.0
+  min_samples_leaf: 1
+  min_samples_split: 2
+  min_weight_fraction_leaf: 0.0
+  monotonic_cst: None
+  n_estimators: 50
+  n_jobs: 1
+  oob_score: False
+  random_state: 42
+  verbose: 0
+  warm_start: False
+
+Highest f1:
+2026-05-16 00:05:38 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
+0.8421052631578947
+Parameters:
+  bootstrap: True
+  ccp_alpha: 0.0
+  class_weight: 'balanced'
+  criterion: 'gini'
+  max_depth: 10
+  max_features: 'sqrt'
+  max_leaf_nodes: None
+  max_samples: None
+  min_impurity_decrease: 0.0
+  min_samples_leaf: 1
+  min_samples_split: 2
+  min_weight_fraction_leaf: 0.0
+  monotonic_cst: None
+  n_estimators: 50
+  n_jobs: 1
+  oob_score: False
+  random_state: 42
+  verbose: 0
+  warm_start: False

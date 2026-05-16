@@ -2,6 +2,7 @@ from pathlib import Path
 
 
 RESULTS_PATH = Path("raw_results.txt")
+CLEANED_RESULTS_PATH = Path("cleaned_results.txt")
 
 
 def parse_results(results_path=RESULTS_PATH):
@@ -82,41 +83,64 @@ def make_map(runs):
     return condensed
 
 
-def print_runs(condensed):
+def format_runs(condensed):
+    output = []
+
     for name, values in condensed.items():
-        print(name)
-        print("  Parameters:")
+        output.append(name)
+        output.append("  Parameters:")
         for param, value in values["parameters"].items():
-            print(f"    {param}: {value}")
-        print(f"  Accuracy : {values['accuracy']}")
-        print(f"  Precision: {values['precision']}")
-        print(f"  Recall   : {values['recall']}")
-        print(f"  F1       : {values['f1']}")
-        print(f"  Confusion Matrix: {values['confusion_matrix']}")
-        print()
+            output.append(f"    {param}: {value}")
+        output.append(f"  Accuracy : {values['accuracy']}")
+        output.append(f"  Precision: {values['precision']}")
+        output.append(f"  Recall   : {values['recall']}")
+        output.append(f"  F1       : {values['f1']}")
+        output.append(f"  Confusion Matrix: {values['confusion_matrix']}")
+        output.append("")
+
+    return "\n".join(output)
 
 
-def print_highest(condensed, metric):
+def format_highest(condensed, metric):
     name, values = max(condensed.items(), key=lambda item: item[1][metric])
+    output = [
+        f"Highest {metric}:",
+        name,
+        str(values[metric]),
+        "Parameters:",
+    ]
 
-    print(f"Highest {metric}:")
-    print(name)
-    print(values[metric])
-    print("Parameters:")
     for param, value in values["parameters"].items():
-        print(f"  {param}: {value}")
-    print()
+        output.append(f"  {param}: {value}")
+
+    output.append("")
+    return "\n".join(output)
+
+
+def build_report(condensed):
+    sections = [
+        format_runs(condensed),
+        format_highest(condensed, "accuracy"),
+        format_highest(condensed, "precision"),
+        format_highest(condensed, "recall"),
+        format_highest(condensed, "f1"),
+    ]
+
+    return "\n".join(sections)
+
+
+def save_report(report, cleaned_results_path=CLEANED_RESULTS_PATH):
+    cleaned_results_path.write_text(report, encoding="utf-8")
 
 
 def main():
     runs = parse_results()
     condensed = make_map(runs)
+    report = build_report(condensed)
 
-    print_runs(condensed)
-    print_highest(condensed, "accuracy")
-    print_highest(condensed, "precision")
-    print_highest(condensed, "recall")
-    print_highest(condensed, "f1")
+    print(report)
+    save_report(report)
+    print(f"Saved cleaned results to {CLEANED_RESULTS_PATH}")
 
 
 if __name__ == "__main__":
