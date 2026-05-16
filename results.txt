@@ -1,4 +1,4 @@
-No Param on Train.py
+Using no Param on Train.py
 
 Accuracy 0.9991046662687406
 Precision 0.8615384615384616
@@ -8,7 +8,7 @@ Confusion Matrix
 [[56855     9]
  [   42    56]]
 
-solver='lbgfs'
+ Using solver='lbgfs'
 
 Accuracy 0.9991046662687406
 Precision 0.8615384615384616
@@ -18,7 +18,7 @@ Confusion Matrix
 [[56855     9]
  [   42    56]]
 
-solver='lbgfs', max_iter = 100
+Using solver='lbgfs', max_iter = 100
 
 Accuracy 0.9991046662687406
 Precision 0.8615384615384616
@@ -28,4 +28,22 @@ Confusion Matrix
 [[56855     9]
  [   42    56]]
 
- solver='lbgfs', max_iter = 100
+Using a randomforestclassifier with n_estimators=100, random_state=42, class_weight='balanced'
+
+Accuracy 0.9995084442259752
+Precision 0.972972972972973
+Recall 0.7346938775510204
+F1 0.8372093023255814
+Confusion Matrix
+[[56862     2]
+ [   26    72]]
+
+Using a randomforestclassifier with n_estimators=100, random_state=42, class_weight='balanced', max_depth=10, n_jobs=1
+
+Accuracy 0.9994733330992591
+Precision 0.8695652173913043
+Recall 0.8163265306122449
+F1 0.8421052631578947
+Confusion Matrix
+[[56852    12]
+ [   18    80]]
