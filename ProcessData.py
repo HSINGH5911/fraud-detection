@@ -102,7 +102,7 @@ def get_highest_f1():
     print(highest)
 
 
-with open("results.txt", "r") as file:
+with open("raw_results.txt", "r") as file:
     get_all_values(file)
     # Storing for later implementation
     # print(acc)

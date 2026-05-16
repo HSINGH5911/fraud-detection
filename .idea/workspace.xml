@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea474720-5622-4b5f-bfd4-c78b2d07d6ff" name="Changes" comment="made a way to view the different effiencies of the models">
+    <list default="true" id="ea474720-5622-4b5f-bfd4-c78b2d07d6ff" name="Changes" comment="made a way to automatically send the results from the curr model to results.txt">
       <change beforePath="$PROJECT_DIR$/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/results.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProcessData.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProcessData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/fraud_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/models/fraud_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/raw_results.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778906809981</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="made a way to automatically send the results from the curr model to results.txt">
+      <option name="closed" value="true" />
+      <created>1778907398413</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778907398413</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -124,6 +134,7 @@
     <MESSAGE value="commit before everything prob crashes" />
     <MESSAGE value="basic version" />
     <MESSAGE value="made a way to view the different effiencies of the models" />
-    <option name="LAST_COMMIT_MESSAGE" value="made a way to view the different effiencies of the models" />
+    <MESSAGE value="made a way to automatically send the results from the curr model to results.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="made a way to automatically send the results from the curr model to results.txt" />
   </component>
 </project>

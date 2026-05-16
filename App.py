@@ -28,5 +28,5 @@ print()
 print("Results:")
 
 metrics = evaluate_model(model, x_test, y_test)
-append_results("results.txt", model, metrics, "src/Train.py")
-print("Saved results to results.txt", flush=True)
+append_results("raw_results.txt", model, metrics, "src/Train.py")
+print("Saved results to raw_results.txt", flush=True)
