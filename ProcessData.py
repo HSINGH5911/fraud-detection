@@ -1,127 +1,123 @@
-acc = []
-pres = []
-recall = []
-f1 = []
-conf_mat = []
+from pathlib import Path
 
-condensed ={}
 
-def get_all_values(file):
-    lines = file.readlines()
+RESULTS_PATH = Path("raw_results.txt")
 
-    i = 0
 
-    while i < len(lines):
-        line = lines[i]
+def parse_results(results_path=RESULTS_PATH):
+    text = results_path.read_text(encoding="utf-8")
+    blocks = [block.strip() for block in text.split("=" * 72) if block.strip()]
 
-        if line.startswith("Accuracy"):
-            acc.append(line.split()[1])
+    runs = []
+    for block in blocks:
+        lines = [line.rstrip() for line in block.splitlines()]
+        run = {
+            "run": "",
+            "imports": [],
+            "active_model_import": "",
+            "model": "",
+            "parameters": {},
+            "metrics": {},
+            "confusion_matrix": [],
+        }
 
-        elif line.startswith("Precision"):
-            pres.append(line.split()[1])
+        section = None
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
 
-        elif line.startswith("Recall"):
-            recall.append(line.split()[1])
+            if not line:
+                i += 1
+                continue
 
-        elif line.startswith("F1"):
-            f1.append(line.split()[1])
+            if line.startswith("Run:"):
+                run["run"] = line.removeprefix("Run:").strip()
+            elif line == "Imports:":
+                section = "imports"
+            elif line == "Active model import:":
+                run["active_model_import"] = lines[i + 1].strip()
+                i += 1
+            elif line.startswith("Model:"):
+                run["model"] = line.removeprefix("Model:").strip()
+            elif line == "Parameters:":
+                section = "parameters"
+            elif line == "Metrics:":
+                section = "metrics"
+            elif line == "Confusion Matrix":
+                run["confusion_matrix"] = [
+                    lines[i + 1].strip(),
+                    lines[i + 2].strip(),
+                ]
+                i += 2
+            elif section == "imports":
+                run["imports"].append(line)
+            elif section == "parameters" and "=" in line:
+                name, value = line.split("=", 1)
+                run["parameters"][name] = value
+            elif section == "metrics":
+                name, value = line.split(maxsplit=1)
+                run["metrics"][name.lower()] = float(value)
 
-        elif line.startswith("Confusion Matrix"):
-            row1 = lines[i + 1].strip()
-            row2 = lines[i + 2].strip()
-
-            conf_mat.append([row1, row2])
-
-        i += 1
-
-def make_map(file):
-    i = 0
-
-    for line in file:
-        if line.startswith("Using"):
-            condensed[line.strip()] = [acc[i], pres[i], recall[i], f1[i], conf_mat[i]]
             i += 1
 
-    for key, values in condensed.items():
-        print(key)
-        print(f"  Accuracy : {values[0]}")
-        print(f"  Precision: {values[1]}")
-        print(f"  Recall   : {values[2]}")
-        print(f"  F1       : {values[3]}")
-        print(f"  Confusion Matrix: {values[4]}")
-        print()
+        runs.append(run)
+
+    return runs
+
+
+def make_map(runs):
+    condensed = {}
+
+    for run in runs:
+        name = f"{run['run']} | {run['model']} | {run['active_model_import']}"
+        condensed[name] = {
+            "accuracy": run["metrics"]["accuracy"],
+            "precision": run["metrics"]["precision"],
+            "recall": run["metrics"]["recall"],
+            "f1": run["metrics"]["f1"],
+            "confusion_matrix": run["confusion_matrix"],
+            "parameters": run["parameters"],
+        }
+
     return condensed
 
 
-def get_highest_accuracy():
-   highest = -1
-   name = ""
+def print_runs(condensed):
+    for name, values in condensed.items():
+        print(name)
+        print("  Parameters:")
+        for param, value in values["parameters"].items():
+            print(f"    {param}: {value}")
+        print(f"  Accuracy : {values['accuracy']}")
+        print(f"  Precision: {values['precision']}")
+        print(f"  Recall   : {values['recall']}")
+        print(f"  F1       : {values['f1']}")
+        print(f"  Confusion Matrix: {values['confusion_matrix']}")
+        print()
 
-   for x in condensed:
-       if float(condensed[x][0]) > highest:
-           highest = float(condensed[x][0])
-           name = x
 
-   print(name)
-   print(highest)
+def print_highest(condensed, metric):
+    name, values = max(condensed.items(), key=lambda item: item[1][metric])
 
-def get_highest_precision():
-    highest = -1
-    name = ""
-
-    for x in condensed:
-        if float(condensed[x][1]) > highest:
-            highest = float(condensed[x][1])
-            name = x
-
+    print(f"Highest {metric}:")
     print(name)
-    print(highest)
-
-def get_highest_recall():
-    highest = -1
-    name = ""
-
-    for x in condensed:
-        if float(condensed[x][2]) > highest:
-            highest = float(condensed[x][2])
-            name = x
-
-    print(name)
-    print(highest)
-
-def get_highest_f1():
-    highest = -1
-    name = ""
-
-    for x in condensed:
-        if float(condensed[x][3]) > highest:
-            highest = float(condensed[x][3])
-            name = x
-
-    print(name)
-    print(highest)
+    print(values[metric])
+    print("Parameters:")
+    for param, value in values["parameters"].items():
+        print(f"  {param}: {value}")
+    print()
 
 
-with open("raw_results.txt", "r") as file:
-    get_all_values(file)
-    # Storing for later implementation
-    # print(acc)
-    # print(pres)
-    # print(recall)
-    # print(f1)
+def main():
+    runs = parse_results()
+    condensed = make_map(runs)
 
-    file.seek(0)
+    print_runs(condensed)
+    print_highest(condensed, "accuracy")
+    print_highest(condensed, "precision")
+    print_highest(condensed, "recall")
+    print_highest(condensed, "f1")
 
-    make_map(file)
 
-    file.seek(0)
-    get_highest_accuracy()
-
-    file.seek(0)
-    get_highest_precision()
-
-    file.seek(0)
-    get_highest_recall()
-
-    file.seek(0)
-    get_highest_f1()
+if __name__ == "__main__":
+    main()
