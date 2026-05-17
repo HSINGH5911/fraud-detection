@@ -133,14 +133,25 @@ def save_report(report, cleaned_results_path=CLEANED_RESULTS_PATH):
     cleaned_results_path.write_text(report, encoding="utf-8")
 
 
-def main():
-    runs = parse_results()
+def process_results(
+    results_path=RESULTS_PATH,
+    cleaned_results_path=CLEANED_RESULTS_PATH,
+    print_report=False,
+):
+    runs = parse_results(results_path)
     condensed = make_map(runs)
     report = build_report(condensed)
 
-    print(report)
-    save_report(report)
-    print(f"Saved cleaned results to {CLEANED_RESULTS_PATH}")
+    if print_report:
+        print(report)
+
+    save_report(report, cleaned_results_path)
+    return cleaned_results_path
+
+
+def main():
+    cleaned_results_path = process_results(print_report=True)
+    print(f"Saved cleaned results to {cleaned_results_path}")
 
 
 if __name__ == "__main__":

@@ -3,6 +3,7 @@ from src.Features import engineer_features
 from src.Train import train_model, save_model
 from src.Evaluate import evaluate_model
 from src.Results import append_results
+from ProcessData import process_results
 
 print("Loading data...", flush=True)
 df = load_data("data/raw/creditcard.csv")
@@ -30,3 +31,6 @@ print("Results:")
 metrics = evaluate_model(model, x_test, y_test)
 append_results("raw_results.txt", model, metrics, "src/Train.py")
 print("Saved results to raw_results.txt", flush=True)
+
+cleaned_results_path = process_results()
+print(f"Saved cleaned results to {cleaned_results_path}", flush=True)

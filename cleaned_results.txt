@@ -118,39 +118,258 @@
   F1       : 0.6871165644171779
   Confusion Matrix: ['[[56855     9]', '[   42    56]]']
 
+2026-05-16 15:57:52 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
+  Parameters:
+    bootstrap: True
+    ccp_alpha: 0.0
+    class_weight: 'balanced'
+    criterion: 'gini'
+    max_depth: 50
+    max_features: 'sqrt'
+    max_leaf_nodes: None
+    max_samples: None
+    min_impurity_decrease: 0.0
+    min_samples_leaf: 1
+    min_samples_split: 2
+    min_weight_fraction_leaf: 0.0
+    monotonic_cst: None
+    n_estimators: 100
+    n_jobs: 1
+    oob_score: False
+    random_state: 42
+    verbose: 0
+    warm_start: True
+  Accuracy : 0.9995084442259752
+  Precision: 0.972972972972973
+  Recall   : 0.7346938775510204
+  F1       : 0.8372093023255814
+  Confusion Matrix: ['[[56862     2]', '[   26    72]]']
+
+2026-05-16 16:11:16 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
+  Parameters:
+    bootstrap: True
+    ccp_alpha: 0.0
+    class_weight: None
+    criterion: 'gini'
+    max_depth: 50
+    max_features: 'sqrt'
+    max_leaf_nodes: None
+    max_samples: None
+    min_impurity_decrease: 0.0
+    min_samples_leaf: 1
+    min_samples_split: 2
+    min_weight_fraction_leaf: 0.0
+    monotonic_cst: None
+    n_estimators: 100
+    n_jobs: 1
+    oob_score: False
+    random_state: 42
+    verbose: 0
+    warm_start: True
+  Accuracy : 0.9995611109160493
+  Precision: 0.974025974025974
+  Recall   : 0.7653061224489796
+  F1       : 0.8571428571428571
+  Confusion Matrix: ['[[56862     2]', '[   23    75]]']
+
+2026-05-16 22:54:30 | XGBClassifier | from xgboost import XGBClassifier
+  Parameters:
+    objective: 'binary:logistic'
+    base_score: None
+    booster: None
+    callbacks: None
+    colsample_bylevel: None
+    colsample_bynode: None
+    colsample_bytree: 0.8
+    device: None
+    early_stopping_rounds: None
+    enable_categorical: False
+    eval_metric: None
+    feature_types: None
+    feature_weights: None
+    gamma: None
+    grow_policy: None
+    importance_type: None
+    interaction_constraints: None
+    learning_rate: 0.05
+    max_bin: None
+    max_cat_threshold: None
+    max_cat_to_onehot: None
+    max_delta_step: None
+    max_depth: 6
+    max_leaves: None
+    min_child_weight: None
+    missing: nan
+    monotone_constraints: None
+    multi_strategy: None
+    n_estimators: 200
+    n_jobs: 1
+    num_parallel_tree: None
+    random_state: 42
+    reg_alpha: None
+    reg_lambda: None
+    sampling_method: None
+    scale_pos_weight: 500
+    subsample: 0.8
+    tree_method: None
+    validate_parameters: None
+    verbosity: None
+  Accuracy : 0.9994733330992591
+  Precision: 0.84
+  Recall   : 0.8571428571428571
+  F1       : 0.8484848484848485
+  Confusion Matrix: ['[[56848    16]', '[   14    84]]']
+
+2026-05-16 22:59:52 | XGBClassifier | from xgboost import XGBClassifier
+  Parameters:
+    objective: 'binary:logistic'
+    base_score: None
+    booster: None
+    callbacks: None
+    colsample_bylevel: None
+    colsample_bynode: None
+    colsample_bytree: 1
+    device: None
+    early_stopping_rounds: None
+    enable_categorical: False
+    eval_metric: None
+    feature_types: None
+    feature_weights: None
+    gamma: None
+    grow_policy: None
+    importance_type: None
+    interaction_constraints: None
+    learning_rate: 0.1
+    max_bin: None
+    max_cat_threshold: None
+    max_cat_to_onehot: None
+    max_delta_step: None
+    max_depth: 3
+    max_leaves: None
+    min_child_weight: None
+    missing: nan
+    monotone_constraints: None
+    multi_strategy: None
+    n_estimators: 100
+    n_jobs: 1
+    num_parallel_tree: None
+    random_state: 42
+    reg_alpha: None
+    reg_lambda: None
+    sampling_method: None
+    scale_pos_weight: 1
+    subsample: 0.8
+    tree_method: None
+    validate_parameters: None
+    verbosity: None
+  Accuracy : 0.9996137776061234
+  Precision: 0.9634146341463414
+  Recall   : 0.8061224489795918
+  F1       : 0.8777777777777778
+  Confusion Matrix: ['[[56861     3]', '[   19    79]]']
+
+2026-05-16 23:03:24 | XGBClassifier | from xgboost import XGBClassifier
+  Parameters:
+    objective: 'binary:logistic'
+    base_score: None
+    booster: None
+    callbacks: None
+    colsample_bylevel: None
+    colsample_bynode: None
+    colsample_bytree: 0.7
+    device: None
+    early_stopping_rounds: None
+    enable_categorical: False
+    eval_metric: None
+    feature_types: None
+    feature_weights: None
+    gamma: None
+    grow_policy: None
+    importance_type: None
+    interaction_constraints: None
+    learning_rate: 0.3
+    max_bin: None
+    max_cat_threshold: None
+    max_cat_to_onehot: None
+    max_delta_step: None
+    max_depth: 4
+    max_leaves: None
+    min_child_weight: None
+    missing: nan
+    monotone_constraints: None
+    multi_strategy: None
+    n_estimators: 50
+    n_jobs: 1
+    num_parallel_tree: None
+    random_state: 42
+    reg_alpha: None
+    reg_lambda: None
+    sampling_method: None
+    scale_pos_weight: 9
+    subsample: 0.5
+    tree_method: None
+    validate_parameters: None
+    verbosity: None
+  Accuracy : 0.9995435553526912
+  Precision: 0.9090909090909091
+  Recall   : 0.8163265306122449
+  F1       : 0.8602150537634409
+  Confusion Matrix: ['[[56856     8]', '[   18    80]]']
+
 Highest accuracy:
-2026-05-16 00:09:52 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
-0.9995084442259752
+2026-05-16 22:59:52 | XGBClassifier | from xgboost import XGBClassifier
+0.9996137776061234
 Parameters:
-  bootstrap: True
-  ccp_alpha: 0.0
-  class_weight: 'balanced'
-  criterion: 'gini'
-  max_depth: None
-  max_features: 'sqrt'
-  max_leaf_nodes: None
-  max_samples: None
-  min_impurity_decrease: 0.0
-  min_samples_leaf: 1
-  min_samples_split: 2
-  min_weight_fraction_leaf: 0.0
-  monotonic_cst: None
+  objective: 'binary:logistic'
+  base_score: None
+  booster: None
+  callbacks: None
+  colsample_bylevel: None
+  colsample_bynode: None
+  colsample_bytree: 1
+  device: None
+  early_stopping_rounds: None
+  enable_categorical: False
+  eval_metric: None
+  feature_types: None
+  feature_weights: None
+  gamma: None
+  grow_policy: None
+  importance_type: None
+  interaction_constraints: None
+  learning_rate: 0.1
+  max_bin: None
+  max_cat_threshold: None
+  max_cat_to_onehot: None
+  max_delta_step: None
+  max_depth: 3
+  max_leaves: None
+  min_child_weight: None
+  missing: nan
+  monotone_constraints: None
+  multi_strategy: None
   n_estimators: 100
   n_jobs: 1
-  oob_score: False
+  num_parallel_tree: None
   random_state: 42
-  verbose: 0
-  warm_start: False
+  reg_alpha: None
+  reg_lambda: None
+  sampling_method: None
+  scale_pos_weight: 1
+  subsample: 0.8
+  tree_method: None
+  validate_parameters: None
+  verbosity: None
 
 Highest precision:
-2026-05-16 00:09:52 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
-0.972972972972973
+2026-05-16 16:11:16 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
+0.974025974025974
 Parameters:
   bootstrap: True
   ccp_alpha: 0.0
-  class_weight: 'balanced'
+  class_weight: None
   criterion: 'gini'
-  max_depth: None
+  max_depth: 50
   max_features: 'sqrt'
   max_leaf_nodes: None
   max_samples: None
@@ -164,52 +383,94 @@ Parameters:
   oob_score: False
   random_state: 42
   verbose: 0
-  warm_start: False
+  warm_start: True
 
 Highest recall:
-2026-05-16 00:05:38 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
-0.8163265306122449
+2026-05-16 22:54:30 | XGBClassifier | from xgboost import XGBClassifier
+0.8571428571428571
 Parameters:
-  bootstrap: True
-  ccp_alpha: 0.0
-  class_weight: 'balanced'
-  criterion: 'gini'
-  max_depth: 10
-  max_features: 'sqrt'
-  max_leaf_nodes: None
-  max_samples: None
-  min_impurity_decrease: 0.0
-  min_samples_leaf: 1
-  min_samples_split: 2
-  min_weight_fraction_leaf: 0.0
-  monotonic_cst: None
-  n_estimators: 50
+  objective: 'binary:logistic'
+  base_score: None
+  booster: None
+  callbacks: None
+  colsample_bylevel: None
+  colsample_bynode: None
+  colsample_bytree: 0.8
+  device: None
+  early_stopping_rounds: None
+  enable_categorical: False
+  eval_metric: None
+  feature_types: None
+  feature_weights: None
+  gamma: None
+  grow_policy: None
+  importance_type: None
+  interaction_constraints: None
+  learning_rate: 0.05
+  max_bin: None
+  max_cat_threshold: None
+  max_cat_to_onehot: None
+  max_delta_step: None
+  max_depth: 6
+  max_leaves: None
+  min_child_weight: None
+  missing: nan
+  monotone_constraints: None
+  multi_strategy: None
+  n_estimators: 200
   n_jobs: 1
-  oob_score: False
+  num_parallel_tree: None
   random_state: 42
-  verbose: 0
-  warm_start: False
+  reg_alpha: None
+  reg_lambda: None
+  sampling_method: None
+  scale_pos_weight: 500
+  subsample: 0.8
+  tree_method: None
+  validate_parameters: None
+  verbosity: None
 
 Highest f1:
-2026-05-16 00:05:38 | RandomForestClassifier | from sklearn.ensemble import RandomForestClassifier
-0.8421052631578947
+2026-05-16 22:59:52 | XGBClassifier | from xgboost import XGBClassifier
+0.8777777777777778
 Parameters:
-  bootstrap: True
-  ccp_alpha: 0.0
-  class_weight: 'balanced'
-  criterion: 'gini'
-  max_depth: 10
-  max_features: 'sqrt'
-  max_leaf_nodes: None
-  max_samples: None
-  min_impurity_decrease: 0.0
-  min_samples_leaf: 1
-  min_samples_split: 2
-  min_weight_fraction_leaf: 0.0
-  monotonic_cst: None
-  n_estimators: 50
+  objective: 'binary:logistic'
+  base_score: None
+  booster: None
+  callbacks: None
+  colsample_bylevel: None
+  colsample_bynode: None
+  colsample_bytree: 1
+  device: None
+  early_stopping_rounds: None
+  enable_categorical: False
+  eval_metric: None
+  feature_types: None
+  feature_weights: None
+  gamma: None
+  grow_policy: None
+  importance_type: None
+  interaction_constraints: None
+  learning_rate: 0.1
+  max_bin: None
+  max_cat_threshold: None
+  max_cat_to_onehot: None
+  max_delta_step: None
+  max_depth: 3
+  max_leaves: None
+  min_child_weight: None
+  missing: nan
+  monotone_constraints: None
+  multi_strategy: None
+  n_estimators: 100
   n_jobs: 1
-  oob_score: False
+  num_parallel_tree: None
   random_state: 42
-  verbose: 0
-  warm_start: False
+  reg_alpha: None
+  reg_lambda: None
+  sampling_method: None
+  scale_pos_weight: 1
+  subsample: 0.8
+  tree_method: None
+  validate_parameters: None
+  verbosity: None
