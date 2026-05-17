@@ -5,32 +5,38 @@ from src.Evaluate import evaluate_model
 from src.Results import append_results
 from ProcessData import process_results
 
-print("Loading data...", flush=True)
-df = load_data("data/raw/creditcard.csv")
 
-print("Engineering features...", flush=True)
-df = engineer_features(df)
+def run_training(progress=print):
+    progress("Loading data...")
+    df = load_data("data/raw/creditcard.csv")
 
-print("Splitting and scaling data...", flush=True)
-x, y = split_data(df, "Class")
-x_train, x_test, y_train, y_test = preprocess(x, y)
+    progress("Engineering features...")
+    df = engineer_features(df)
 
-print("Training model...", flush=True)
-model = train_model(x_train, y_train)
+    progress("Splitting and scaling data...")
+    x, y = split_data(df, "Class")
+    x_train, x_test, y_train, y_test = preprocess(x, y)
 
-print("Evaluating model...", flush=True)
+    progress("Training model...")
+    model = train_model(x_train, y_train)
 
-print("Saving model...", flush=True)
-save_model(model, "models/fraud_model.pkl")
+    progress("Evaluating model...")
 
-print("Done.", flush=True)
+    progress("Saving model...")
+    save_model(model, "models/fraud_model.pkl")
 
-print()
-print("Results:")
+    progress("Done.")
+    progress("")
+    progress("Results:")
 
-metrics = evaluate_model(model, x_test, y_test)
-append_results("raw_results.txt", model, metrics, "src/Train.py")
-print("Saved results to raw_results.txt", flush=True)
+    metrics = evaluate_model(model, x_test, y_test)
+    append_results("raw_results.txt", model, metrics, "src/Train.py")
+    progress("Saved results to raw_results.txt")
 
-cleaned_results_path = process_results()
-print(f"Saved cleaned results to {cleaned_results_path}", flush=True)
+    cleaned_results_path = process_results()
+    progress(f"Saved cleaned results to {cleaned_results_path}")
+    return cleaned_results_path
+
+
+if __name__ == "__main__":
+    run_training(lambda message: print(message, flush=True))
