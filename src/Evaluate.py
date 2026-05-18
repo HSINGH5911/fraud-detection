@@ -7,6 +7,8 @@ from sklearn.metrics import (
     roc_auc_score,
 )
 
+metrics = {}
+
 def evaluate_model(model, x_test, y_test):
     y_pred = model.predict(x_test)
     metrics = {
@@ -17,12 +19,7 @@ def evaluate_model(model, x_test, y_test):
         "confusion_matrix": confusion_matrix(y_test, y_pred),
     }
 
-    print("Accuracy", metrics["accuracy"])
-    print("Precision", metrics["precision"])
-    print("Recall", metrics["recall"])
-    print("F1", metrics["f1"])
+    return metrics
 
-    print("Confusion Matrix")
-    print(metrics["confusion_matrix"])
-
+def get_metrics():
     return metrics

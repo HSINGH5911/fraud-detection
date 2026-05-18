@@ -35,7 +35,8 @@ def run_training(progress=print):
 
     cleaned_results_path = process_results()
     progress(f"Saved cleaned results to {cleaned_results_path}")
-    return cleaned_results_path
+
+    return cleaned_results_path, metrics
 
 
 if __name__ == "__main__":

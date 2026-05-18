@@ -5,9 +5,7 @@ from pathlib import Path
 from queue import Queue
 from threading import Thread
 import traceback
-
 from App import run_training
-
 
 CLEANED_RESULTS_PATH = Path("cleaned_results.txt")
 training_queue = Queue()
@@ -108,12 +106,12 @@ def train_a_model():
 
     def worker():
         try:
-            cleaned_results_path = run_training(update_status)
+            cleaned_results_path, metrics = run_training(update_status)
         except Exception as error:
             traceback.print_exc()
             training_queue.put(("error", error))
         else:
-            training_queue.put(("done", cleaned_results_path))
+            training_queue.put(("done", (cleaned_results_path, metrics)))
 
     Thread(target=worker, daemon=True).start()
 
@@ -135,10 +133,47 @@ def check_training_queue():
         root.after(100, check_training_queue)
 
 
-def training_finished(cleaned_results_path):
+def training_finished(result):
+    cleaned_results_path, metrics = result
     train_a_model_button.config(state=NORMAL)
     set_status(f"Training complete. Saved cleaned results to {cleaned_results_path}.")
     messagebox.showinfo("Training complete", "Model trained and results saved.")
+
+    accuracy_label = ttk.Label(
+        frm,
+        text=f"Accuracy: {metrics['accuracy']:.4f}",
+        font=("Times New Roman", 12)
+    )
+
+    precision_label = ttk.Label(
+        frm,
+        text=f"Precision: {metrics['precision']:.4f}",
+        font=("Times New Roman", 12)
+    )
+
+    recall_label = ttk.Label(
+        frm,
+        text=f"Recall: {metrics['recall']:.4f}",
+        font=("Times New Roman", 12)
+    )
+
+    f1_score_label = ttk.Label(
+        frm,
+        text=f"F1-Score: {metrics['f1']:.4f}",
+        font=("Times New Roman", 12)
+    )
+
+    confusion_label = ttk.Label(
+        frm,
+        text=f"Confusion matrix: {metrics['confusion_matrix']}",
+        font=("Times New Roman", 12)
+    )
+
+    accuracy_label.place(relx=0.30, rely=0.6, anchor="w")
+    precision_label.place(relx=0.30, rely=0.65, anchor="w")
+    recall_label.place(relx=0.30, rely=0.70, anchor="w")
+    f1_score_label.place(relx=0.30, rely=0.75, anchor="w")
+    confusion_label.place(relx=0.30, rely=0.80, anchor="w")
 
 
 def training_failed(error):
