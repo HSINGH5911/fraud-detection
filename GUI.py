@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
+from pathlib import Path
 from queue import Queue
 from threading import Thread
 import traceback
@@ -8,8 +9,8 @@ import traceback
 from App import run_training
 
 
+CLEANED_RESULTS_PATH = Path("cleaned_results.txt")
 training_queue = Queue()
-
 
 def welcome():
     global train_a_model_button, status_label
@@ -57,11 +58,40 @@ def welcome():
 
     train_a_model_label.place(relx=0.21, rely=0.3, anchor="w")
     train_a_model_button.place(relx=0.50, rely=0.3, anchor="w")
+
     status_label.place(relx=0.21, rely=0.4, anchor="w")
 
 
 def view_results():
-    print("hi")
+    if not CLEANED_RESULTS_PATH.exists():
+        messagebox.showerror(
+            "Results not found",
+            f"Could not find {CLEANED_RESULTS_PATH}. Train a model first."
+        )
+        return
+
+    results_window = Toplevel(root)
+    results_window.geometry("900x600")
+    results_window.title("Cleaned Results")
+
+    results_frame = ttk.Frame(results_window, padding=10)
+    results_frame.pack(fill=BOTH, expand=True)
+
+    scrollbar = ttk.Scrollbar(results_frame)
+    scrollbar.pack(side=RIGHT, fill=Y)
+
+    results_text = Text(
+        results_frame,
+        wrap=WORD,
+        yscrollcommand=scrollbar.set,
+        font=("Consolas", 10)
+    )
+    results_text.pack(side=LEFT, fill=BOTH, expand=True)
+    scrollbar.config(command=results_text.yview)
+
+    results = CLEANED_RESULTS_PATH.read_text(encoding="utf-8")
+    results_text.insert("1.0", results)
+    results_text.config(state=DISABLED)
 
 
 def set_status(message):
